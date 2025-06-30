@@ -1,37 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Podaway | Eco Pod Wilderness Stays</title>
-  <meta name="description" content="Podaway offers eco pod accommodation for the ultimate wilderness escape in Australia." />
-  <meta name="keywords" content="eco pod, glamping, wilderness escape, nature accommodation, Australia" />
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background-color: #f0f4f8; }
-    header, footer { background-color: #33691e; color: white; padding: 1em; text-align: center; }
-    main { padding: 2em; max-width: 900px; margin: auto; background-color: white; }
-    img { width: 100%; height: auto; margin-bottom: 1em; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podaway - Invest in Sustainable Escapes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e2d;
+            background: #fefefe;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(76, 106, 79, 0.7), rgba(139, 169, 142, 0.6)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiBmaWxsPSIjNEM2QTRGIi8+CjxjaXJjbGUgY3g9IjE2MDAiIGN5PSIyMDAiIHI9IjE1MCIgZmlsbD0iIzhCQTk4RSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPGNpcmNsZSBjeD0iMzAwIiBjeT0iODAwIiByPSIyMDAiIGZpbGw9IiM2Nzg0NkEiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxyZWN0IHg9IjgwMCIgeT0iNDAwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjI4MCIgcng9IjEyIiBmaWxsPSIjM0M1MjNGIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4K');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(76, 106, 79, 0.4) 0%, rgba(139, 169, 142, 0.3) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4C6A4F, #678466);
+            color: white;
+            box-shadow: 0 8px 25px rgba(76, 106, 79, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(76, 106, 79, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #4C6A4F;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4C6A4F;
+            font-weight: 500;
+        }
+        
+        .problem {
+            background: linear-gradient(135deg, #f8fdf8, #ffffff);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(76, 106, 79, 0.1);
+            border-left: 4px solid #8BA98E;
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #4C6A4F, #678466);
+            color: white;
+        }
+        
+        .solution h2 {
+            color: white;
+        }
+        
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .market-opportunity {
+            background: #f8fdf8;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(76, 106, 79, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4C6A4F;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-model {
+            background: white;
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .model-card {
+            padding: 2rem;
+            border: 2px solid #8BA98E;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .model-card:hover {
+            background: #f8fdf8;
+            border-color: #4C6A4F;
+        }
+        
+        .investment-ask {
+            background: linear-gradient(135deg, #2c3e2d, #4C6A4F);
+            color: white;
+            text-align: center;
+        }
+        
+        .investment-ask h2 {
+            color: white;
+        }
+        
+        .ask-amount {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            color: #8BA98E;
+        }
+        
+        .use-of-funds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .fund-use {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer {
+            background: #2c3e2d;
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #8BA98E;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #8BA98E;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            opacity: 0.6;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Podaway</h1>
-    <p>Eco Pod Wilderness Getaways</p>
-  </header>
-  <main>
-    <img src="placeholder.jpg" alt="Eco pod accommodation image" />
-    <p>Reconnect with nature in luxurious eco pods located in stunning Australian wilderness settings. Our pods offer comfort and sustainability for the ultimate getaway.</p>
-    <h2>Why Podaway?</h2>
-    <ul>
-      <li>Eco-friendly design</li>
-      <li>Remote and peaceful locations</li>
-      <li>Perfect for couples, solo travellers, and families</li>
-    </ul>
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:accounts@zachdonna.com">accounts@zachdonna.com</a></p>
-  </main>
-  <footer>
-    <p>&copy; 2025 Podaway Australia</p>
-  </footer>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">PODAWAY</div>
+            <h1>Invest in the Future of Sustainable Escapes</h1>
+            <p class="subheadline">Nature-first cabins redefining weekend getaways in Australia and New Zealand</p>
+            <div class="cta-buttons">
+                <a href="#pitch-deck" class="btn btn-primary">Download Pitch Deck</a>
+                <a href="#contact" class="btn btn-secondary">Request a Call</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div style="font-size: 0.9rem; margin-top: 0.5rem;">Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem">
+        <h2>The Problem We're Solving</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>🏙️ Digital Overload</h3>
+                <p>Urban professionals are increasingly burnt out, spending 7+ hours daily on screens and craving authentic nature experiences that help them disconnect and recharge.</p>
+            </div>
+            <div class="problem-card">
+                <h3>⛺ Limited Quality Options</h3>
+                <p>Existing accommodation options are either too basic (camping) or too urban (hotels), with few truly off-grid yet comfortable experiences within easy reach of cities.</p>
+            </div>
+            <div class="problem-card">
+                <h3>🌱 Growing Eco-Consciousness</h3>
+                <p>The wellness and eco-tourism markets are exploding, but there's a gap for consistent, high-quality sustainable accommodation that delivers on both comfort and environmental values.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution">
+        <h2>Our Solution: Podaway</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Beautiful, off-grid cabin experiences that reconnect people with nature while delivering exceptional comfort and sustainability.</p>
+        
+        <div class="solution-features">
+            <div class="feature">
+                <div class="feature-icon">🏡</div>
+                <h3>Premium Off-Grid Pods</h3>
+                <p>Thoughtfully designed cabins with solar power, composting toilets, and minimal environmental impact</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📍</div>
+                <h3>Strategic Locations</h3>
+                <p>1-2 hours from major cities in Australia and New Zealand's most beautiful natural settings</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Seamless Experience</h3>
+                <p>Digital-first booking platform with contactless check-in and curated nature experiences</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">♻️</div>
+                <h3>Sustainable Impact</h3>
+                <p>Carbon-negative operations with local sourcing and regenerative land practices</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="section market-opportunity">
+        <h2>Market Opportunity</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$156B</div>
+                <p>ANZ Tourism Industry Value</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">23%</div>
+                <p>Annual Growth in Eco-Tourism</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2.1B</div>
+                <p>Domestic Short-Stay Market</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">78%</div>
+                <p>Millennials Prioritizing Experiences</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <h3>Proven Success Stories</h3>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">Getaway (USA) raised $150M+ and operates 50+ locations | Unyoked (AU) expanding rapidly across Australia | Slow Cabins (Europe) achieving 85% occupancy rates</p>
+        </div>
+    </section>
+
+    <!-- Business Model -->
+    <section class="section business-model">
+        <h2>Business Model</h2>
+        <div class="model-grid">
+            <div class="model-card">
+                <h3>🎯 Direct Bookings</h3>
+                <p>Premium pricing through our own platform, building strong customer relationships and maximizing margins</p>
+            </div>
+            <div class="model-card">
+                <h3>🏗️ Scalable Rollout</h3>
+                <p>Modular pod design enabling rapid expansion through owned sites and franchise partnerships</p>
+            </div>
+            <div class="model-card">
+                <h3>🏢 Corporate Market</h3>
+                <p>Team retreats, wellness programs, and corporate packages representing 30%+ of potential revenue</p>
+            </div>
+            <div class="model-card">
+                <h3>🔄 High LTV</h3>
+                <p>Repeat bookings and referrals driving strong customer lifetime value and sustainable growth</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Ask -->
+    <section class="section investment-ask" id="contact">
+        <h2>Investment Opportunity</h2>
+        <div class="ask-amount">$2.5M</div>
+        <p style="font-size: 1.2rem; margin-bottom: 3rem;">Seed funding to launch Podaway and establish our first pod network</p>
+        
+        <div class="use-of-funds">
+            <div class="fund-use">
+                <h3>🏗️ Pod Construction</h3>
+                <p>Build 8-10 pilot pods across Victoria, NSW, and North Island NZ</p>
+            </div>
+            <div class="fund-use">
+                <h3>🌍 Land Partnerships</h3>
+                <p>Secure strategic locations and establish landowner relationships</p>
+            </div>
+            <div class="fund-use">
+                <h3>💻 Platform Development</h3>
+                <p>Build world-class booking platform and customer experience systems</p>
+            </div>
+            <div class="fund-use">
+                <h3>👥 Team Growth</h3>
+                <p>Hire key roles in operations, marketing, and sustainable design</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <div class="cta-buttons">
+                <a href="#pitch-deck" class="btn btn-primary">Download Full Pitch Deck</a>
+                <a href="mailto:invest@podaway.com" class="btn btn-secondary">Schedule a Meeting</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Podaway</h4>
+                <a href="#about">About</a>
+                <a href="#locations">Locations</a>
+                <a href="#sustainability">Sustainability</a>
+                <a href="#careers">Careers</a>
+            </div>
+            <div class="footer-section">
+                <h4>Investors</h4>
+                <a href="#pitch-deck">Pitch Deck</a>
+                <a href="#financials">Financials</a>
+                <a href="#team">Team</a>
+                <a href="#updates">Updates</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:invest@podaway.com">invest@podaway.com</a>
+                <a href="tel:+61400000000">+61 400 000 000</a>
+                <a href="#press">Press Kit</a>
+                <a href="#legal">Legal</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#linkedin">LinkedIn</a>
+                <a href="#instagram">Instagram</a>
+                <a href="#twitter">Twitter</a>
+                <a href="#newsletter">Newsletter</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Podaway. All rights reserved. Investment opportunities subject to qualification and regulatory requirements.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber) {
+                        animateValue(statNumber);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        function animateValue(element) {
+            const text = element.textContent;
+            const number = parseFloat(text.replace(/[^0-9.]/g, ''));
+            const suffix = text.replace(/[0-9.]/g, '');
+            let current = 0;
+            const increment = number / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    element.textContent = text;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
+        }
+    </script>
 </body>
 </html>
