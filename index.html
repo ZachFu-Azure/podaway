@@ -12,306 +12,311 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #2c3e2d;
-            background: #fefefe;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            font-size: 16px;
         }
         
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(76, 106, 79, 0.7), rgba(139, 169, 142, 0.6)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiBmaWxsPSIjNEM2QTRGIi8+CjxjaXJjbGUgY3g9IjE2MDAiIGN5PSIyMDAiIHI9IjE1MCIgZmlsbD0iIzhCQTk4RSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPGNpcmNsZSBjeD0iMzAwIiBjeT0iODAwIiByPSIyMDAiIGZpbGw9IiM2Nzg0NkEiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxyZWN0IHg9IjgwMCIgeT0iNDAwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjI4MCIgcng9IjEyIiBmaWxsPSIjM0M1MjNGIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4K');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .header {
+            padding: 2rem 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .header .container {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(76, 106, 79, 0.4) 0%, rgba(139, 169, 142, 0.3) 100%);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 2rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .logo {
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d5a2d;
+            letter-spacing: 1px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav a:hover {
+            color: #2d5a2d;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            background: #fafafa;
         }
         
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.1;
-        }
-        
-        .hero .subheadline {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
-        .cta-buttons {
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        .hero-cta {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
             text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #4C6A4F, #678466);
+            background: #2d5a2d;
             color: white;
-            box-shadow: 0 8px 25px rgba(76, 106, 79, 0.4);
         }
         
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(76, 106, 79, 0.6);
+            background: #245024;
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            background: transparent;
+            color: #2d5a2d;
+            border: 1px solid #2d5a2d;
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
+            background: #2d5a2d;
+            color: white;
         }
         
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.8);
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-        
+        /* Sections */
         .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 5rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: #fafafa;
         }
         
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #4C6A4F;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
             text-align: center;
-            font-weight: 600;
+            letter-spacing: -0.5px;
         }
         
-        .section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #4C6A4F;
-            font-weight: 500;
+        .section-intro {
+            font-size: 1.125rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .problem {
-            background: linear-gradient(135deg, #f8fdf8, #ffffff);
-        }
-        
+        /* Problem Cards */
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .problem-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(76, 106, 79, 0.1);
-            border-left: 4px solid #8BA98E;
-            transition: transform 0.3s ease;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
         }
         
-        .problem-card:hover {
-            transform: translateY(-5px);
+        .problem-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
         }
         
-        .solution {
-            background: linear-gradient(135deg, #4C6A4F, #678466);
-            color: white;
+        .problem-card p {
+            color: #666;
+            line-height: 1.6;
         }
         
-        .solution h2 {
-            color: white;
-        }
-        
-        .solution-features {
+        /* Solution Features */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
         
         .feature {
             text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
         }
         
         .feature-icon {
-            font-size: 3rem;
+            width: 80px;
+            height: 80px;
+            background: #f0f7f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
             margin-bottom: 1rem;
         }
         
-        .market-opportunity {
-            background: #f8fdf8;
+        .feature p {
+            color: #666;
+            font-size: 0.95rem;
         }
         
+        /* Stats */
         .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #2d5a2d;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Business Model */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+        
+        .model-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .model-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .model-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Investment Section */
+        .investment {
+            background: #2d5a2d;
+            color: white;
+            text-align: center;
+        }
+        
+        .investment h2 {
+            color: white;
+        }
+        
+        .investment-amount {
+            font-size: 4rem;
+            font-weight: 300;
+            margin: 2rem 0;
+            color: #90c090;
+        }
+        
+        .investment-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .funding-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(76, 106, 79, 0.1);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #4C6A4F;
-            margin-bottom: 0.5rem;
-        }
-        
-        .business-model {
-            background: white;
-        }
-        
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .model-card {
-            padding: 2rem;
-            border: 2px solid #8BA98E;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .model-card:hover {
-            background: #f8fdf8;
-            border-color: #4C6A4F;
-        }
-        
-        .investment-ask {
-            background: linear-gradient(135deg, #2c3e2d, #4C6A4F);
-            color: white;
-            text-align: center;
-        }
-        
-        .investment-ask h2 {
-            color: white;
-        }
-        
-        .ask-amount {
-            font-size: 4rem;
-            font-weight: 700;
-            margin: 2rem 0;
-            color: #8BA98E;
-        }
-        
-        .use-of-funds {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .fund-use {
-            background: rgba(255, 255, 255, 0.1);
+        .funding-item {
             padding: 1.5rem;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
             backdrop-filter: blur(10px);
         }
         
-        .footer {
-            background: #2c3e2d;
-            color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
+        .funding-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
         }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .funding-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
@@ -319,236 +324,285 @@
         }
         
         .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: #8BA98E;
+            color: #90c090;
         }
         
         .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
+            color: #ccc;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
         }
         
         .footer-section a:hover {
-            color: #8BA98E;
+            color: #90c090;
         }
         
-        .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        .footer-bottom {
+            border-top: 1px solid #333;
             padding-top: 2rem;
-            opacity: 0.6;
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
         }
         
+        /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav {
+                gap: 1rem;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero .subheadline {
-                font-size: 1.1rem;
+            .hero .subtitle {
+                font-size: 1.125rem;
             }
             
-            .cta-buttons {
+            .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
             
             .section {
-                padding: 3rem 1rem;
+                padding: 3rem 0;
             }
             
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
+            
+            .investment-amount {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
             <div class="logo">PODAWAY</div>
-            <h1>Invest in the Future of Sustainable Escapes</h1>
-            <p class="subheadline">Nature-first cabins redefining weekend getaways in Australia and New Zealand</p>
-            <div class="cta-buttons">
+            <nav class="nav">
+                <a href="#problem">Problem</a>
+                <a href="#solution">Solution</a>
+                <a href="#market">Market</a>
+                <a href="#investment">Investment</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Invest in Sustainable Escapes</h1>
+            <p class="subtitle">Nature-first cabins redefining weekend getaways in Australia and New Zealand</p>
+            <div class="hero-cta">
                 <a href="#pitch-deck" class="btn btn-primary">Download Pitch Deck</a>
-                <a href="#contact" class="btn btn-secondary">Request a Call</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div style="font-size: 2rem;">↓</div>
-            <div style="font-size: 0.9rem; margin-top: 0.5rem;">Scroll to explore</div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="section problem">
-        <h2>The Problem We're Solving</h2>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <h3>🏙️ Digital Overload</h3>
-                <p>Urban professionals are increasingly burnt out, spending 7+ hours daily on screens and craving authentic nature experiences that help them disconnect and recharge.</p>
-            </div>
-            <div class="problem-card">
-                <h3>⛺ Limited Quality Options</h3>
-                <p>Existing accommodation options are either too basic (camping) or too urban (hotels), with few truly off-grid yet comfortable experiences within easy reach of cities.</p>
-            </div>
-            <div class="problem-card">
-                <h3>🌱 Growing Eco-Consciousness</h3>
-                <p>The wellness and eco-tourism markets are exploding, but there's a gap for consistent, high-quality sustainable accommodation that delivers on both comfort and environmental values.</p>
+                <a href="#investment" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="section solution">
-        <h2>Our Solution: Podaway</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Beautiful, off-grid cabin experiences that reconnect people with nature while delivering exceptional comfort and sustainability.</p>
-        
-        <div class="solution-features">
-            <div class="feature">
-                <div class="feature-icon">🏡</div>
-                <h3>Premium Off-Grid Pods</h3>
-                <p>Thoughtfully designed cabins with solar power, composting toilets, and minimal environmental impact</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📍</div>
-                <h3>Strategic Locations</h3>
-                <p>1-2 hours from major cities in Australia and New Zealand's most beautiful natural settings</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Seamless Experience</h3>
-                <p>Digital-first booking platform with contactless check-in and curated nature experiences</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">♻️</div>
-                <h3>Sustainable Impact</h3>
-                <p>Carbon-negative operations with local sourcing and regenerative land practices</p>
+    <!-- Problem -->
+    <section class="section" id="problem">
+        <div class="container">
+            <h2>The Problem</h2>
+            <p class="section-intro">Urban professionals are seeking authentic nature experiences, but quality options are limited</p>
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <h3>Digital Overload</h3>
+                    <p>Urban professionals spend 7+ hours daily on screens, craving authentic nature experiences to disconnect and recharge.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <h3>Limited Quality Options</h3>
+                    <p>Existing accommodation is either too basic (camping) or too urban (hotels), with few truly off-grid yet comfortable experiences.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <h3>Growing Eco-Consciousness</h3>
+                    <p>The wellness and eco-tourism markets are exploding, but there's a gap for consistent, high-quality sustainable accommodation.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Market Opportunity -->
-    <section class="section market-opportunity">
-        <h2>Market Opportunity</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">$156B</div>
-                <p>ANZ Tourism Industry Value</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">23%</div>
-                <p>Annual Growth in Eco-Tourism</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">$2.1B</div>
-                <p>Domestic Short-Stay Market</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">78%</div>
-                <p>Millennials Prioritizing Experiences</p>
+    <!-- Solution -->
+    <section class="section" id="solution">
+        <div class="container">
+            <h2>Our Solution</h2>
+            <p class="section-intro">Beautiful, off-grid cabin experiences that reconnect people with nature while delivering exceptional comfort and sustainability</p>
+            <div class="features-grid">
+                <div class="feature fade-in">
+                    <div class="feature-icon">🏡</div>
+                    <h3>Premium Off-Grid Pods</h3>
+                    <p>Thoughtfully designed cabins with solar power, composting toilets, and minimal environmental impact</p>
+                </div>
+                <div class="feature fade-in">
+                    <div class="feature-icon">📍</div>
+                    <h3>Strategic Locations</h3>
+                    <p>1-2 hours from major cities in Australia and New Zealand's most beautiful natural settings</p>
+                </div>
+                <div class="feature fade-in">
+                    <div class="feature-icon">📱</div>
+                    <h3>Seamless Experience</h3>
+                    <p>Digital-first booking platform with contactless check-in and curated nature experiences</p>
+                </div>
+                <div class="feature fade-in">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Sustainable Impact</h3>
+                    <p>Carbon-negative operations with local sourcing and regenerative land practices</p>
+                </div>
             </div>
         </div>
-        
-        <div style="margin-top: 3rem; text-align: center;">
-            <h3>Proven Success Stories</h3>
-            <p style="font-size: 1.1rem; margin-top: 1rem;">Getaway (USA) raised $150M+ and operates 50+ locations | Unyoked (AU) expanding rapidly across Australia | Slow Cabins (Europe) achieving 85% occupancy rates</p>
+    </section>
+
+    <!-- Market -->
+    <section class="section" id="market">
+        <div class="container">
+            <h2>Market Opportunity</h2>
+            <div class="stats-grid">
+                <div class="stat fade-in">
+                    <span class="stat-number">$156B</span>
+                    <div class="stat-label">ANZ Tourism Industry Value</div>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-number">23%</span>
+                    <div class="stat-label">Annual Growth in Eco-Tourism</div>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-number">$2.1B</span>
+                    <div class="stat-label">Domestic Short-Stay Market</div>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-number">78%</span>
+                    <div class="stat-label">Millennials Prioritizing Experiences</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Business Model -->
-    <section class="section business-model">
-        <h2>Business Model</h2>
-        <div class="model-grid">
-            <div class="model-card">
-                <h3>🎯 Direct Bookings</h3>
-                <p>Premium pricing through our own platform, building strong customer relationships and maximizing margins</p>
-            </div>
-            <div class="model-card">
-                <h3>🏗️ Scalable Rollout</h3>
-                <p>Modular pod design enabling rapid expansion through owned sites and franchise partnerships</p>
-            </div>
-            <div class="model-card">
-                <h3>🏢 Corporate Market</h3>
-                <p>Team retreats, wellness programs, and corporate packages representing 30%+ of potential revenue</p>
-            </div>
-            <div class="model-card">
-                <h3>🔄 High LTV</h3>
-                <p>Repeat bookings and referrals driving strong customer lifetime value and sustainable growth</p>
+    <section class="section">
+        <div class="container">
+            <h2>Business Model</h2>
+            <div class="model-grid">
+                <div class="model-item fade-in">
+                    <h3>Direct Bookings</h3>
+                    <p>Premium pricing through our own platform, building strong customer relationships and maximizing margins</p>
+                </div>
+                <div class="model-item fade-in">
+                    <h3>Scalable Rollout</h3>
+                    <p>Modular pod design enabling rapid expansion through owned sites and franchise partnerships</p>
+                </div>
+                <div class="model-item fade-in">
+                    <h3>Corporate Market</h3>
+                    <p>Team retreats, wellness programs, and corporate packages representing 30%+ of potential revenue</p>
+                </div>
+                <div class="model-item fade-in">
+                    <h3>High Lifetime Value</h3>
+                    <p>Repeat bookings and referrals driving strong customer lifetime value and sustainable growth</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Investment Ask -->
-    <section class="section investment-ask" id="contact">
-        <h2>Investment Opportunity</h2>
-        <div class="ask-amount">$2.5M</div>
-        <p style="font-size: 1.2rem; margin-bottom: 3rem;">Seed funding to launch Podaway and establish our first pod network</p>
-        
-        <div class="use-of-funds">
-            <div class="fund-use">
-                <h3>🏗️ Pod Construction</h3>
-                <p>Build 8-10 pilot pods across Victoria, NSW, and North Island NZ</p>
+    <!-- Investment -->
+    <section class="section investment" id="investment">
+        <div class="container">
+            <h2>Investment Opportunity</h2>
+            <div class="investment-amount">$2.5M</div>
+            <p class="investment-subtitle">Seed funding to launch Podaway and establish our first pod network</p>
+            
+            <div class="funding-grid">
+                <div class="funding-item">
+                    <h3>Pod Construction</h3>
+                    <p>Build 8-10 pilot pods across Victoria, NSW, and North Island NZ</p>
+                </div>
+                <div class="funding-item">
+                    <h3>Land Partnerships</h3>
+                    <p>Secure strategic locations and establish landowner relationships</p>
+                </div>
+                <div class="funding-item">
+                    <h3>Platform Development</h3>
+                    <p>Build world-class booking platform and customer experience systems</p>
+                </div>
+                <div class="funding-item">
+                    <h3>Team Growth</h3>
+                    <p>Hire key roles in operations, marketing, and sustainable design</p>
+                </div>
             </div>
-            <div class="fund-use">
-                <h3>🌍 Land Partnerships</h3>
-                <p>Secure strategic locations and establish landowner relationships</p>
-            </div>
-            <div class="fund-use">
-                <h3>💻 Platform Development</h3>
-                <p>Build world-class booking platform and customer experience systems</p>
-            </div>
-            <div class="fund-use">
-                <h3>👥 Team Growth</h3>
-                <p>Hire key roles in operations, marketing, and sustainable design</p>
-            </div>
-        </div>
-        
-        <div style="margin-top: 3rem;">
-            <div class="cta-buttons">
-                <a href="#pitch-deck" class="btn btn-primary">Download Full Pitch Deck</a>
-                <a href="mailto:invest@podaway.com" class="btn btn-secondary">Schedule a Meeting</a>
+            
+            <div style="margin-top: 3rem;">
+                <div class="hero-cta">
+                    <a href="#pitch-deck" class="btn btn-primary">Download Full Pitch Deck</a>
+                    <a href="mailto:invest@podaway.com" class="btn btn-secondary">Schedule a Meeting</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Podaway</h4>
-                <a href="#about">About</a>
-                <a href="#locations">Locations</a>
-                <a href="#sustainability">Sustainability</a>
-                <a href="#careers">Careers</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#locations">Locations</a>
+                    <a href="#sustainability">Sustainability</a>
+                    <a href="#careers">Careers</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Investors</h4>
+                    <a href="#pitch-deck">Pitch Deck</a>
+                    <a href="#financials">Financials</a>
+                    <a href="#team">Team</a>
+                    <a href="#updates">Updates</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:invest@podaway.com">invest@podaway.com</a>
+                    <a href="tel:+61400000000">+61 400 000 000</a>
+                    <a href="#press">Press Kit</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#newsletter">Newsletter</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Investors</h4>
-                <a href="#pitch-deck">Pitch Deck</a>
-                <a href="#financials">Financials</a>
-                <a href="#team">Team</a>
-                <a href="#updates">Updates</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Podaway. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <a href="mailto:invest@podaway.com">invest@podaway.com</a>
-                <a href="tel:+61400000000">+61 400 000 000</a>
-                <a href="#press">Press Kit</a>
-                <a href="#legal">Legal</a>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <a href="#linkedin">LinkedIn</a>
-                <a href="#instagram">Instagram</a>
-                <a href="#twitter">Twitter</a>
-                <a href="#newsletter">Newsletter</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Podaway. All rights reserved. Investment opportunities subject to qualification and regulatory requirements.</p>
         </div>
     </footer>
 
@@ -567,33 +621,39 @@
             });
         });
 
-        // Parallax effect for hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-
-        // Animate stats on scroll
+        // Fade in animations
         const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    if (statNumber) {
-                        animateValue(statNumber);
-                    }
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.stat-card').forEach(card => {
-            observer.observe(card);
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate stats
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber && !statNumber.classList.contains('animated')) {
+                        animateValue(statNumber);
+                        statNumber.classList.add('animated');
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
         });
 
         function animateValue(element) {
@@ -601,16 +661,20 @@
             const number = parseFloat(text.replace(/[^0-9.]/g, ''));
             const suffix = text.replace(/[0-9.]/g, '');
             let current = 0;
-            const increment = number / 50;
+            const increment = number / 60;
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= number) {
                     element.textContent = text;
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current) + suffix;
+                    if (suffix === '%') {
+                        element.textContent = Math.floor(current) + '%';
+                    } else {
+                        element.textContent = (suffix === 'B' ? '$' : '$') + Math.floor(current) + suffix;
+                    }
                 }
-            }, 30);
+            }, 25);
         }
     </script>
 </body>
